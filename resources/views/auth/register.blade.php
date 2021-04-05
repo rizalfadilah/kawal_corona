@@ -1,72 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>AdminLTE 3 | Registration Page</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{asset('assets/plugins/fontawesome-free/css/all.min.css')}}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css')}}">
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="{{asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('assets/dist/css/adminlte.min.css')}}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="{{url('/admin')}}"><b>Admin</b>LTE</a>
+    <a href="{{url('/admin')}}"><b>Tracking</b>Covid</a>
   </div>
 
   <div class="card">
     <div class="card-body register-card-body">
-      <p class="login-box-msg">Register a new membership</p>
+      <p class="login-box-msg">Membuat Akun Baru</p>
 
       <form action="{{route('register')}}" method="post">
-          @csrf
+        @csrf
         <div class="input-group mb-3">
-          <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Full name">
+          <input type="text" name="name" class="form-control  @error('name') is-invalid @enderror" placeholder="Nama Lengkap">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
-            </div>
+            </div>   
           </div>
-            @error('name')
-             <span class="invalid-feedback" role="alert">
-             <strong>{{ $message }}</strong>
-            </span>
-            @enderror
+          @error('name')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+          @enderror
         </div>
         <div class="input-group mb-3">
-          <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email">
+          <input type="email" name="email" class="form-control  @error('email') is-invalid @enderror" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
             </div>
           </div>
-           @error('email')
+          @error('email')
           <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
+              <strong>{{ $message }}</strong>
           </span>
-          @enderror
+         @enderror
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password">
+          <input type="password" name="password" class="form-control  @error('password') is-invalid @enderror" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
             </div>
           </div>
-            @error('password')
-            <span class="invalid-feedback" role="alert">
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
+          @error('password')
+          <span class="invalid-feedback" role="alert">
+              <strong>{{ $message }}</strong>
+          </span>
+         @enderror
         </div>
         <div class="input-group mb-3">
-          <input type="password" name="password_confirmation" class="form-control" placeholder="Retype password">
+          <input type="password" name="password_confirmation" class="form-control" placeholder="Ketik ulang password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -90,19 +94,10 @@
         </div>
       </form>
 
-      <div class="social-auth-links text-center">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i>
-          Sign up using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i>
-          Sign up using Google+
-        </a>
-      </div>
-
-      <a href="login.html" class="text-center">I already have a membership</a>
+<br>
+      <div class="container">
+      <center><a href="{{url('/login')}}" class="text-center">Sudah Memiliki Akun</a></center>
+      <div>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->

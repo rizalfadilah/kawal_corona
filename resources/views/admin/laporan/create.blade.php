@@ -15,10 +15,10 @@ active
                                 <form action="{{route('laporan.store')}}" class="form-horizontal m-t-30" method="post">
                                     @csrf
                                     @livewireScripts
-                                    @livewire('tracking-data')
+                                    @livewire('tracking-covid')
                                     @livewireStyles
                                     <div class="form-group">
-                                    <button type="submit" class="float-right btn btn-info">Submit</button>
+                                    <button type="submit" class="float-right btn btn-info">Simpan</button>
                                     </div>
                                 </form>
                             </div>
